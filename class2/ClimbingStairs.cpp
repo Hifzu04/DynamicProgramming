@@ -27,25 +27,45 @@ using namespace std;
 
 
 
-///WITH MEMOISATION
+///WITH MEMOISATION  tc--> O(N) , sc--> O(N)+O(N)
 
-int climbing(int n, vector<int>&dp){
-  if(n==1) return 1;
-  if(n==0) return 1;
+// int climbing(int n, vector<int>&dp){
+//   if(n==1) return 1;
+//   if(n==0) return 1;
   
-  if(dp[n] != -1 ) return dp[n];
+//   if(dp[n] != -1 ) return dp[n];
 
-  return dp[n] =  climbing(n-1, dp)+climbing(n-2, dp);
+//   return dp[n] =  climbing(n-1, dp)+climbing(n-2, dp);
 
-}
-int main (){
-    int n ; cin>>n;
-    vector<int>dp(n+1,-1);
+// }
+// int main (){
+//     int n ; cin>>n;
+//     vector<int>dp(n+1,-1);
     
-    cout<<climbing(n,dp);
+//     cout<<climbing(n,dp);
+// }
+
+
+
+
+//Tabulation (no additional array is reqt , reduced space complexity by O(N);
+
+int climbing(int n){
+    int prev2nd = 1;
+    int prev = 2;
+    int ans;
+    for(int i = 3 ; i<=n; i++){
+        ans = prev + prev2nd;
+        prev2nd=prev;
+        prev= ans;
+
+    }
+    return ans;
 }
 
-
-
+int main(){
+    int n ; cin>>n;
+    cout<<climbing(n);
+}
 
 
