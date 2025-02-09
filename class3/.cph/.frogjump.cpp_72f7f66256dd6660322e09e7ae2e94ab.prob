@@ -1,0 +1,1 @@
+{"name":"Local: frogjump","url":"/home/hifzur/work/dp/class3/frogjump.cpp","tests":[{"id":1739087278018,"input":"6\n30 10 60 10 60 50","output":""},{"id":1739095203603,"input":"4 10 20 30 10","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/hifzur/work/dp/class3/frogjump.cpp","group":"local","local":true}
